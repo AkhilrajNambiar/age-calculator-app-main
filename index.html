@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Age calculator app</title>
+
+  <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+
+  <div class="main-card">
+    <form class="date-form">
+      <div class="date-inputs">
+        <section class="day">
+          <label class="day-label">Day</label>
+          <input type="text" name="day" class="day" placeholder="DD">
+        </section>
+        <section class="month">
+          <label class="month-label">Month</label>
+          <input type="text" name="month" class="month" placeholder="MM">
+        </section>
+        <section class="year">
+          <label class="year-label">Year</label>
+          <input type="text" name="year" class="year" placeholder="YYYY">
+        </section>
+      </div>
+      <hr>
+      <button class="calculate-button" type="submit">
+        <img src="/assets/images/icon-arrow.svg" alt="calculate-date-image" class="calculate-date">
+      </button>
+    </form>
+    <div class="calculated-result">
+      <h1 class="calculated-years"><span>--</span> years</h1>
+      <h1 class="calculated-months"><span>--</span> months</h1>
+      <h1 class="calculated-days"><span>--</span> days</h1>
+    </div>
+  </div>
+</body>
+</html>

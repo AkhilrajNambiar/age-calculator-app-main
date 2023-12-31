@@ -1,0 +1,83 @@
+@font-face {
+    font-family: "poppins";
+    src: url("/assets/fonts/Poppins-Italic.ttf");
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: "poppins";
+    src: url("/assets/fonts/Poppins-Bold.ttf");
+    font-weight: 700;
+}
+@font-face {
+    font-family: "poppins";
+    src: url("/assets/fonts/Poppins-ExtraBoldItalic.ttf");
+    font-weight: 800;
+    font-style: italic;
+}
+* {
+    font-family: "poppins";
+    margin: 0;
+}
+body {
+    background-color: hsl(0, 0%, 86%);
+}
+div.main-card {
+    background-color:hsl(0, 0%, 100%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    border-bottom-right-radius: 200px;
+    padding: 50px;
+}
+label {
+    display: block;
+    color: hsl(0, 1%, 44%);
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+div.date-inputs {
+    width: 70%;
+    display: flex;
+    gap: 20px;
+}
+input {
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 30px;
+    width: 100%;
+    min-width: 0;
+    flex: 1;
+    border: 1px solid hsl(0, 0%, 86%);
+    border-radius: 4px;
+}
+hr {
+    margin-top: 40px;
+    border: 1px solid hsl(0, 0%, 86%);
+}
+button.calculate-button {
+    background-color: hsl(259, 100%, 65%);
+    border: 1px solid hsl(259, 100%, 65%);
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    right: 40px;
+    top: 130px;
+}
+div.calculated-result {
+    margin-top: 50px;
+}
+h1 span {
+    font-size: 80px;
+    color: hsl(259, 100%, 65%);
+}
+h1 {
+    font-size: 100px;
+    font-weight: 800;
+    font-style: italic;
+    line-height: 1;
+}
