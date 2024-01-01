@@ -17,21 +17,26 @@
       <div class="date-inputs">
         <section class="day">
           <label class="day-label">Day</label>
-          <input type="text" name="day" class="day" placeholder="DD">
+          <input type="text" name="day" class="day" placeholder="DD" maxlength="2">
+          <p class="error-message">Invalid date!</p>
         </section>
         <section class="month">
           <label class="month-label">Month</label>
-          <input type="text" name="month" class="month" placeholder="MM">
+          <input type="text" name="month" class="month" placeholder="MM" maxlength="2">
+          <p class="error-message">Invalid month!</p>
         </section>
         <section class="year">
           <label class="year-label">Year</label>
-          <input type="text" name="year" class="year" placeholder="YYYY">
+          <input type="text" name="year" class="year" placeholder="YYYY" maxlength="4">
+          <p class="error-message">Invalid year!</p>
         </section>
       </div>
-      <hr>
-      <button class="calculate-button" type="submit">
-        <img src="/assets/images/icon-arrow.svg" alt="calculate-date-image" class="calculate-date">
-      </button>
+      <div class="divider-and-button">
+        <hr>
+        <button class="calculate-button" type="submit">
+          <img src="/assets/images/icon-arrow.svg" alt="calculate-date-image" class="calculate-date">
+        </button>
+      </div>
     </form>
     <div class="calculated-result">
       <h1 class="calculated-years"><span>--</span> years</h1>
@@ -39,5 +44,6 @@
       <h1 class="calculated-days"><span>--</span> days</h1>
     </div>
   </div>
+  <script src="sandbox.js"></script>
 </body>
 </html>

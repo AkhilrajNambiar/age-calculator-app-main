@@ -39,6 +39,9 @@ label {
     margin-bottom: 5px;
     text-transform: uppercase;
 }
+label.error {
+    color: hsl(0, 100%, 67%);
+}
 div.date-inputs {
     width: 70%;
     display: flex;
@@ -54,6 +57,27 @@ input {
     border: 1px solid hsl(0, 0%, 86%);
     border-radius: 4px;
 }
+input.error {
+    border: 1px solid hsl(0, 100%, 67%);
+}
+input.error:focus {
+    border: 1px solid hsl(0, 100%, 67%);
+}
+input:focus {
+    outline: none;
+    border: 1px solid hsl(259, 100%, 65%);
+}
+p.error-message {
+    font-weight: 400;
+    font-style: italic;
+    font-size: 14px;
+    color: hsl(0, 100%, 67%);
+    position: absolute;
+    display: none;
+}
+div.divider-and-button {
+    position: relative;
+}
 hr {
     margin-top: 40px;
     border: 1px solid hsl(0, 0%, 86%);
@@ -65,8 +89,13 @@ button.calculate-button {
     width: 100px;
     height: 100px;
     position: absolute;
-    right: 40px;
-    top: 130px;
+    top: -50px;
+    right: 0;
+}
+button.calculate-button:hover {
+    background-color: hsl(0, 0%, 8%);
+    border: 1px solid hsl(0, 0%, 8%);
+    cursor: pointer;
 }
 div.calculated-result {
     margin-top: 50px;
@@ -80,4 +109,54 @@ h1 {
     font-weight: 800;
     font-style: italic;
     line-height: 1;
+}
+@media screen and (max-width: 1100px){
+    div.main-card {
+        width: 60%;
+    }
+}
+@media screen and (max-width: 950px){
+    div.main-card {
+        width: 70%;
+    }
+}
+@media screen and (max-width: 800px){
+    div.main-card {
+        width: 80%;
+    }
+}
+@media screen and (max-width: 650px){
+    div.main-card {
+        width: 80%;
+    }
+    div.date-inputs {
+        width: 100%;
+    }
+    hr {
+        margin-top: 80px;
+    }
+    button.calculate-button {
+        position: absolute;
+        top: -40px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    button.calculate-button img {
+        width: 40px;
+        height: 40px;
+    }
+    h1 span {
+        font-size: 1em;
+    }
+    h1 {
+        font-size: 4em;
+        font-weight: 800;
+        font-style: italic;
+        line-height: 1;
+    }
 }
