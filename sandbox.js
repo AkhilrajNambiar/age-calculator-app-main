@@ -1,7 +1,8 @@
 let emptyError = "This field is required";
 let invalidDayMessage = "Must be a valid day";
 let invalidMonthMessage = "Must be a valid month";
-let invalidYearMessage = "Must be in the past";
+let invalidYearMessage = "Must be a valid year";
+let yearShouldBePastMessage = "Must be in the past";
 
 let dayInput = document.querySelector('input.day');
 let monthInput = document.querySelector('input.month');
@@ -51,7 +52,7 @@ let handleErrorForYear = (hasError, errorMsg) => {
     if (hasError) {
         yearInput.classList.add('error');
         yearErrorMessage.style.display = 'block';
-        yearErrorMessage.innerText = invalidYearMessage;
+        yearErrorMessage.innerText = errorMsg;
         yearLabel.classList.add('error');
     } else {
         yearInput.classList.remove('error');
@@ -65,16 +66,20 @@ let validateDate = (dayString, monthString, yearString) => {
     let month = Number.parseInt(monthString, 10);
     let year = Number.parseInt(yearString, 10);
     let ongoingYear = new Date().getFullYear();
-    if (day > 31) {
+    if (day > 31 || day <= 0) {
         handleErrorForDay(true, invalidDayMessage);
         return false;
-    } else if (month > 12) {
+    } else if (month > 12 || month <= 0) {
         handleErrorForMonth(true, invalidMonthMessage);
         return false;
     } else if (year >= ongoingYear) {
+        handleErrorForYear(true, yearShouldBePastMessage);
+        return false;
+    } else if (year <= 0) {
         handleErrorForYear(true, invalidYearMessage);
         return false;
-    } else {
+    }
+    else {
         return true;
     }
 }
@@ -128,9 +133,8 @@ dateForm.addEventListener('submit', (event) => {
             let day = Number.parseInt(dayInput.value, 10);
             let month = Number.parseInt(monthInput.value, 10);
             let year = Number.parseInt(yearInput.value, 10);
-            let date = new Date(year, month, day);
             let currentDate = new Date();
-            let hasBirthdayOccurred = (currentDate.getMonth() + 1) > month || (currentDate.getMonth() + 1 == month && currentDate.getDate() > date);
+            let hasBirthdayOccurred = (currentDate.getMonth() + 1) > month || (currentDate.getMonth() + 1 == month && currentDate.getDate() > day);
             calculatedDays.innerText = hasBirthdayOccurred ? currentDate.getDate() - day : 31 + currentDate.getDate() - day;
             calculatedMonths.innerText = hasBirthdayOccurred ? (currentDate.getMonth() + 1) - month : 12 + (currentDate.getMonth()) - month;
             calculatedYears.innerText = hasBirthdayOccurred ? currentDate.getFullYear() - year : currentDate.getFullYear() - year - 1;
